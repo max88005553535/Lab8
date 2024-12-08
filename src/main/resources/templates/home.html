@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Uploaded Photos</title>
+</head>
+<body>
+<h1>Uploaded Photos</h1>
+
+<div>
+    <!-- Вывод загруженных фото -->
+    <ul>
+        <li th:each="photo : ${photos}">
+            <img th:src="@{'/images/' + ${photo.fileName}}" alt="Photo" style="width: 200px;">
+        </li>
+    </ul>
+</div>
+
+<a href="/upload">Upload Another Photo</a>
+</body>
+</html>
